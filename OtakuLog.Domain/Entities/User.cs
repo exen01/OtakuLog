@@ -1,4 +1,7 @@
-﻿namespace OtakuLog.Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+
+namespace OtakuLog.Domain.Entities;
 
 /// <summary>
 /// Представляет пользователя.
