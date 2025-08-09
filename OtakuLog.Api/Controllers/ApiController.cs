@@ -1,23 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace OtakuLog.Api.Controllers
+namespace OtakuLog.Api.Controllers;
+
+[ApiController]
+[Route("api")]
+public class ApiController : ControllerBase
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class ApiController : ControllerBase
+    private readonly ILogger<ApiController> _logger;
+
+    public ApiController(ILogger<ApiController> logger)
     {
-        private readonly ILogger<ApiController> _logger;
+        _logger = logger;
+    }
 
-        public ApiController(ILogger<ApiController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IActionResult Get()
-        {
-            return Ok();
-        }
+    [HttpGet("hello")]
+    public IActionResult Get()
+    {
+        return Ok("hello");
     }
 }
