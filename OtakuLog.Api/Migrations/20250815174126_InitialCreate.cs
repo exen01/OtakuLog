@@ -19,7 +19,8 @@ namespace OtakuLog.Api.Migrations
                     Name = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
                     Russian = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
                     Episodes = table.Column<int>(type: "INTEGER", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true)
+                    Description = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
+                    AnimeStatus = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

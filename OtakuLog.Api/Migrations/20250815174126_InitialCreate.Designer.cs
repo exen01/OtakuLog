@@ -11,7 +11,7 @@ using OtakuLog.Api.Infrastructure;
 namespace OtakuLog.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250725183216_InitialCreate")]
+    [Migration("20250815174126_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -39,6 +39,9 @@ namespace OtakuLog.Api.Migrations
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AnimeStatus")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")

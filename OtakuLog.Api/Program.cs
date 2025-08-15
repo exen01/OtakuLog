@@ -1,9 +1,11 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OtakuLog.Api.Abstract;
 using OtakuLog.Api.Infrastructure;
+using OtakuLog.Api.Repositories;
 
 namespace OtakuLog.Api;
 
@@ -15,9 +17,9 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        {
-            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-        });
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+        );
+        builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

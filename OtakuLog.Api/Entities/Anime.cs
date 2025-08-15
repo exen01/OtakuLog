@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OtakuLog.Api.Enums;
+using System.Collections.Generic;
 
 namespace OtakuLog.Api.Entities;
 
@@ -36,4 +37,9 @@ public class Anime
     /// List of genres.
     /// </summary>
     public required ICollection<Genre> Genres { get; set; }
+
+    /// <summary>
+    /// Anime status.
+    /// </summary>
+    public AnimeStatus AnimeStatus { get; set; }
 }
